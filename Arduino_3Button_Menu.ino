@@ -38,7 +38,7 @@ MenuItem subMenu1[] = {
      delay(1000);
    },
     nullptr, 0 },
-  { "Geri", goBack, nullptr, 0 }
+  { "Back", goBack, nullptr, 0 }
 };
 
 MenuItem subMenu2[] = {
@@ -49,7 +49,7 @@ MenuItem subMenu2[] = {
      delay(1000);
    },
     nullptr, 0 },
-  { "Geri", goBack, nullptr, 0 }
+  { "Back", goBack, nullptr, 0 }
 };
 
 MenuItem mainMenu[] = {
@@ -149,7 +149,9 @@ void selectItem() {
     drawFullMenu();
   } else if (selected.action != nullptr) {
     selected.action();
-    drawFullMenu();
+    if (selected.name != "Back") {
+      drawFullMenu();
+    }
   }
 }
 
